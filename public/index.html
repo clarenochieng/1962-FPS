@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1962</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "/build/three.module.js",
+                "three/addons/": "/jsm/"
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="game-container"></div>
+    <div id="ui-layer">
+        <div id="crosshair">+</div>
+        <div id="stats">
+            <div id="health">Health: 100</div>
+            <div id="ammo">Ammo: 20</div>
+            <div id="wave">Wave: 1</div>
+            <div id="zombies">Zombies Left: 0</div>
+            <div id="titans">Titans Left: 0</div>
+            <div id="score">Score: 0</div>
+        </div>
+        <div id="game-over" class="hidden">
+            <h1>GAME OVER</h1>
+            <button id="restart-btn">Restart</button>
+        </div>
+        <div id="pause-screen" class="hidden">
+            <h1>PAUSED</h1>
+            <p>Press P to Resume</p>
+            <div id="pause-stats">
+                <h2>Session Stats</h2>
+                <div id="session-stats"></div>
+                <h2>Overall Stats</h2>
+                <div id="overall-stats"></div>
+            </div>
+            <button id="quit-btn">Quit to Main Menu</button>
+        </div>
+        <div id="stats-screen" class="hidden">
+            <h1>PLAYER STATS</h1>
+            <div id="stats-screen-content">
+                <div id="overall-stats-start"></div>
+            </div>
+            <button id="close-stats-btn">Back</button>
+        </div>
+        <div id="leaderboard-overlay" class="hidden">
+            <h2>Top Active Players</h2>
+            <div id="leaderboard-overlay-list"></div>
+        </div>
+        <div id="start-screen">
+            <h1>1962</h1>
+            <p>Click to Start</p>
+            <p>WASD to Move, Click to Shoot</p>
+            <div id="difficulty-selector">
+                <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn active" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+            <button id="view-stats-btn" style="margin-top: 20px;">View Stats</button>
+            <div id="leaderboard-panel">
+                <h2>Active Players</h2>
+                <div id="leaderboard-list"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
